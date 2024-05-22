@@ -11,6 +11,7 @@ defmodule DemoWeb.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: Mix.compilers() ++ [ :protocol_ex],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -54,7 +55,8 @@ defmodule DemoWeb.MixProject do
       {:telemetry_poller, "~> 1.0"},
       {:demo, in_umbrella: true},
       {:jason, "~> 1.2"},
-      {:bandit, "~> 1.2"}
+      {:bandit, "~> 1.2"},
+      { :protocol_ex, "~> 0.4.0"}
     ]
   end
 

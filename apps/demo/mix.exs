@@ -11,6 +11,7 @@ defmodule Demo.MixProject do
       lockfile: "../../mix.lock",
       elixir: "~> 1.14",
       elixirc_paths: elixirc_paths(Mix.env()),
+      compilers: Mix.compilers() ++ [ :protocol_ex],
       start_permanent: Mix.env() == :prod,
       aliases: aliases(),
       deps: deps()
@@ -37,7 +38,8 @@ defmodule Demo.MixProject do
   defp deps do
     [
       {:dns_cluster, "~> 0.1.1"},
-      {:phoenix_pubsub, "~> 2.1"}.
+      {:phoenix_pubsub, "~> 2.1"},
+      { :protocol_ex, "~> 0.4.0"}
     ]
   end
 
